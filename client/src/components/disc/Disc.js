@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFiles } from "../../action/file";
+import { createDir, getFiles } from "../../action/file";
 import FileList from "./fileList/FileList";
 import "./disc.scss";
+import Popup from "./Popup";
+import { setPopupDisplay } from "../../reducer/fileReducer";
 
 function Disc() {
   const dispatch = useDispatch();
@@ -10,13 +12,22 @@ function Disc() {
   useEffect(() => {
     dispatch(getFiles(currentDir));
   }, [currentDir]);
+
+  const showHandler = () => {
+    // dispatch(createDir(currentDir, "Lasia"));
+    dispatch(setPopupDisplay('flex'))
+  };
+
   return (
     <div className="disc">
       <div className="disc__btns">
         <button className="disc__back">Cofnij</button>
-        <button className="disc__create">Stworzyc folder</button>
+        <button className="disc__create" onClick={showHandler}>
+          Stworzyc folder
+        </button>
       </div>
       <FileList />
+      <Popup />
     </div>
   );
 }
