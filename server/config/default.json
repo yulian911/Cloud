@@ -1,6 +1,6 @@
 {
   "serverPort": 5000,
-  "dbUrl": "mongodb+srv://admin:a1231231@cluster0.milxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "dbUrl": "mongodb+srv://admin:********@cluster0.milxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   "secretKey": "jaskier911",
   "filePath":"C:\\Users\\Yulian\\Downloads\\Cloud-main\\Cloud-main\\server\\files"
 }
